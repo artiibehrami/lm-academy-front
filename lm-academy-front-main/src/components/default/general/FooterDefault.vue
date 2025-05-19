@@ -1,29 +1,22 @@
 <script setup>
-import { computed } from 'vue'
-
-const currentYear = computed(() => new Date().getFullYear())
+// No script needed for static footer
 </script>
 
 <template>
-  <footer>
-    <div class="footer flex justify-between items-center border-t-textPrimary border-t-4 py-4">
-      <nav class="flex gap-2 text-xl">
-        <router-link :to="{ name: 'PrivacyPolicy' }" active-class="border-b-textPrimary border-b-2"
-          >Privacy Policy</router-link
-        >
-        <span>|</span>
-        <router-link :to="{ name: 'TermsOfService' }" active-class="border-b-textPrimary border-b-2"
-          >Terms of Service</router-link
-        >
-        <span>|</span>
-        <router-link :to="{ name: 'ContactPage' }" active-class="border-b-textPrimary border-b-2"
-          >Contact</router-link
-        >
-      </nav>
-
-      <p class="text-xl">Copyright &copy; {{ currentYear }}</p>
+  <footer class="flex flex-col sm:flex-row justify-between items-center border-t-textPrimary border-t-4 py-4 px-4 mt-8">
+    <div class="flex flex-col sm:flex-row gap-2 text-xl items-center">
+      <router-link :to="{ name: 'PrivacyPolicy' }" active-class="border-b-textPrimary border-b-2">Privacy Policy</router-link>
+      <span class="hidden sm:inline">|</span>
+      <router-link :to="{ name: 'TermsOfService' }" active-class="border-b-textPrimary border-b-2">Terms of Service</router-link>
+      <span class="hidden sm:inline">|</span>
+      <router-link :to="{ name: 'ContactPage' }" active-class="border-b-textPrimary border-b-2">Contact</router-link>
     </div>
+    <div class="text-xl mt-2 sm:mt-0">Copyright © 2025</div>
   </footer>
 </template>
 
-<style scoped></style>
+<style scoped>
+footer {
+  background: #fafafa;
+}
+</style>
